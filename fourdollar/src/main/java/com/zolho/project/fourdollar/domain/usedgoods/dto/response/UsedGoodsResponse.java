@@ -22,11 +22,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class UsedGoodsResponse {
 
-    private int user_id;
+    private int userId;
     private String title;
     private String description;
-    private String[] pictures;
+//    private String[] pictures;
     private int bid;
-    private int deadline;
-    private Date created_at;
+    private Date deadline;
 }

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author : 조현민
  * @version : 1.0.0
@@ -20,10 +22,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsedGoodsRequest {
 
-    private int user_id;
+    private int userId;
     private String title;
     private String description;
-    private String[] pictures;
+//    private String[] pictures;
     private int bid;
-    private int deadline;
+    private Date deadline;
 }
