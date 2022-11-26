@@ -1,9 +1,15 @@
 package com.zolho.project.fourdollar.domain.usedgoods.service;
 
+import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
+import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
+import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
 import com.zolho.project.fourdollar.domain.usedgoods.mapper.UsedGoodsMapper;
 import com.zolho.project.fourdollar.domain.usedgoods.repository.UsedGoodsRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 
 /**
@@ -21,9 +27,18 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UsedGoodsService {
 
-    private final UsedGoodsRepository usedGoodsRepository;
+    @Autowired
+    UsedGoodsRepository usedGoodsRepository;
 
     private final UsedGoodsMapper usedGoodsMapper;
 
-    private final
+    // 게시물 등록
+    @Transactional
+    public UsedGoodsResponse create(UsedGoodsRequest requestDto) {
+        UsedGoods usedGoods = usedGoodsRepository.save(usedGoodsMapper.toEntity(requestDto));
+
+        return usedGoodsMapper.toDto(usedGoods);
+    }
+
+
 }
