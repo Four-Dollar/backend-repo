@@ -53,8 +53,12 @@ public class FileService {
     @Transactional
     public FileResponse deleteById(Long id){
         File file = getEntity(id);
-        file.getBaseTime().delete();
-
+        boolean isPresent = fileRepository.findById(id).isPresent();
+        if(!isPresent) {
+        } else{
+            fileRepository.deleteById(id);
+        }
+        //file.getBaseTime().delete();
         return fileMapper.toDto(file);
     }
 

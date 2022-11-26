@@ -3,6 +3,7 @@ package com.zolho.project.fourdollar.domain.file.dto.response;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
@@ -21,12 +22,11 @@ import java.time.LocalDateTime;
 @Getter
 @Builder
 @AllArgsConstructor
+@Setter
 public class FileResponse {
     private Long id;
     private Long userGoodsId;
     private String fileUrl;
-    private MultipartFile file;
-
+    //private MultipartFile file;
     private LocalDateTime createAt;
-    private LocalDateTime updatedAt;
 }

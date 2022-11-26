@@ -3,6 +3,7 @@ package com.zolho.project.fourdollar.domain.file.dto.request;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 public class FileRequest {
     private Long userGoodsId;
     private String fileUrl;

@@ -19,7 +19,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class File {
     @Id
@@ -28,17 +27,26 @@ public class File {
 
     // 외래키로 변경
     @Column(nullable = false)
+    @Setter
     private Long userGoodsId;
 
     @Column(nullable = false)
+    @Setter
     private String fileUrl;
 
     @Embedded
     private BaseTime baseTime;
 
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean isDeleted = Boolean.FALSE;
+
     @Builder
     public File(String fileUrl, Long userGoodsId){
         this.fileUrl = fileUrl;
         this.userGoodsId = userGoodsId;
+    }
+
+    public File() {
     }
 }
