@@ -4,6 +4,7 @@ import com.zolho.project.fourdollar.domain.usedgoods.service.UsedGoodsService;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
 import com.zolho.project.fourdollar.global.entity.ResponseFormat;
+import com.zolho.project.fourdollar.global.entity.ResponseStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,10 +29,10 @@ public class UsedGoodsController {
     private final UsedGoodsService usedGoodsService;
 
     @PostMapping
-    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> create(@ResponseBody UsedGoodsRequest dto) {
+    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> create(UsedGoodsRequest dto) {
         // 제네릭, 컬렉션
         UsedGoodsResponse savedBoard = usedGoodsService.create(dto);
-        ResponseFormat<UsedGoodsResponse> responseFormat = new ResponseFormat<>(ResponseStatus.POST_BOARD_SUCCESS, savedBoard);
+        ResponseFormat<UsedGoodsResponse> responseFormat = new ResponseFormat<>(ResponseStatus.POST_USEDGOODS_SUCCESS, savedBoard);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseFormat);
     }
