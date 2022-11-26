@@ -8,6 +8,17 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.lang.reflect.Member;
 
+/**
+ * @author : 조현민
+ * @version : 1.0.0
+ * @package : com.zolho.project.fourdollar.domain.usedgoods.entity
+ * @name : UsedGoods
+ * @create-date: 2022.11.23
+ * @update-date : 2022.11.26
+ * @update-author : 조현민
+ * @update-description :
+ */
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
