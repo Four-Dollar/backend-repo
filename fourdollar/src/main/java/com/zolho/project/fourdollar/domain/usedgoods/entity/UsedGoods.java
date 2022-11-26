@@ -1,12 +1,11 @@
 package com.zolho.project.fourdollar.domain.usedgoods.entity;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.zolho.project.fourdollar.global.entity.BaseTime;
+import lombok.*;
 
 import javax.persistence.*;
-import java.lang.reflect.Member;
+import java.util.Date;
+
 
 /**
  * @author : 조현민
@@ -21,24 +20,35 @@ import java.lang.reflect.Member;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UsedGoods {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     // TODO : 추후에 수정 예정
     @Column(nullable = false)
-    @Getter
-    private int user_id;
+    private int userId;
 
-    @Setter
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
-    @Setter
-    private Member menager;
+    @Embedded
+    private BaseTime baseTime;
+
+    @Column(nullable = false)
+    private Boolean isDeleted;
+
+    @Builder
+    public UsedGoods(int userId, String title, String description) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+    }
 
 }
