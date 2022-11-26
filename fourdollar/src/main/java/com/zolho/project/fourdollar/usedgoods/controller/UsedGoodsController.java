@@ -8,6 +8,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author : 조현민
+ * @version : 1.0.0
+ * @package : com.zolho.project.fourdollar.usedgoods.controller
+ * @name : UsedGoodsController
+ * @create-date: 2022.11.23
+ * @update-date : 2022.11.26
+ * @update-author : 조현민
+ * @update-description :
+ */
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/used-goods")
