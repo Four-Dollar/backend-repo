@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.usedgoods.mapper;
+package com.zolho.project.fourdollar.domain.usedgoods.mapper;
 
 import lombok.RequiredArgsConstructor;
 

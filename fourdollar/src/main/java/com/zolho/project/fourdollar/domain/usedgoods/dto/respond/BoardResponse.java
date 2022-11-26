@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.usedgoods.dto.respond;
+package com.zolho.project.fourdollar.domain.usedgoods.dto.respond;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

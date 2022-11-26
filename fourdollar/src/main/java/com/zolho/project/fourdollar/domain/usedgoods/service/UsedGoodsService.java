@@ -1,7 +1,7 @@
-package com.zolho.project.fourdollar.usedgoods.service;
+package com.zolho.project.fourdollar.domain.usedgoods.service;
 
-import com.zolho.project.fourdollar.usedgoods.mapper.UsedGoodsMapper;
-import com.zolho.project.fourdollar.usedgoods.repository.UsedGoodsRepository;
+import com.zolho.project.fourdollar.domain.usedgoods.mapper.UsedGoodsMapper;
+import com.zolho.project.fourdollar.domain.usedgoods.repository.UsedGoodsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

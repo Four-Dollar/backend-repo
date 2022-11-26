@@ -1,8 +1,8 @@
-package com.zolho.project.fourdollar.usedgoods.controller;
+package com.zolho.project.fourdollar.domain.usedgoods.controller;
 
-import com.zolho.project.fourdollar.usedgoods.dto.request.UsedGoodsRequest;
-import com.zolho.project.fourdollar.usedgoods.dto.respond.BoardResponse;
-import com.zolho.project.fourdollar.usedgoods.service.UsedGoodsService;
+import com.zolho.project.fourdollar.domain.usedgoods.service.UsedGoodsService;
+import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
+import com.zolho.project.fourdollar.domain.usedgoods.dto.respond.BoardResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

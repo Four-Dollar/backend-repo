@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.usedgoods.dto.request;
+package com.zolho.project.fourdollar.domain.usedgoods.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

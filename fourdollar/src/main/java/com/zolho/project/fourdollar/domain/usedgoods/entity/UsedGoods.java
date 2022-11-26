@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.usedgoods.entity;
+package com.zolho.project.fourdollar.domain.usedgoods.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
