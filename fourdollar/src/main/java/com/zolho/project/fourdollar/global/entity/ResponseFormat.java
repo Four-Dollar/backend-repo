@@ -2,6 +2,16 @@ package com.zolho.project.fourdollar.global.entity;
 
 import lombok.Getter;
 
+/**
+ * @author : 김현진
+ * @version : 1.0.0
+ * @package : com.zolho.project.fourdollar.global.entity
+ * @name : ResponseFormat
+ * @create-date: 2022.11.26
+ * @update-date :
+ * @update-author : 000
+ * @update-description :
+ */
 
 @Getter
 public class ResponseFormat<T> {
