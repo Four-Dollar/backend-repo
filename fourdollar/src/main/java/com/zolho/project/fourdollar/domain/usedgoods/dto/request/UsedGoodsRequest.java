@@ -1,8 +1,7 @@
 package com.zolho.project.fourdollar.domain.usedgoods.dto.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import java.util.Date;
 
@@ -17,15 +16,19 @@ import java.util.Date;
  * @update-description :
  */
 
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class UsedGoodsRequest {
-
+    @JsonProperty
     private int userId;
+    @JsonProperty
     private String title;
+    @JsonProperty
     private String description;
 //    private String[] pictures;
-    private int bid;
-    private Date deadline;
+//    private int bid;
+ //   private Date deadline;
 }
