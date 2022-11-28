@@ -1,8 +1,6 @@
 package com.zolho.project.fourdollar.domain.usedgoods.dto.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -17,15 +15,20 @@ import java.util.Date;
  * @update-description :
  */
 
-@Getter
+
+@Setter
 @Builder
 @AllArgsConstructor
+@ToString
+@Getter
 public class UsedGoodsResponse {
 
     private int userId;
     private String title;
     private String description;
-//    private String[] pictures;
+    // private String[] pictures;
     private int bid;
-    private Date deadline;
+    private boolean isDeleted;
+    // private Date deadline;
+
 }
