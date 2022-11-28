@@ -7,10 +7,14 @@ import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsRespo
 import com.zolho.project.fourdollar.global.entity.ResponseFormat;
 import com.zolho.project.fourdollar.global.entity.ResponseStatus;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+
 
 /**
  * @author : 조현민
@@ -26,6 +30,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/used-goods")
+@Slf4j
 public class UsedGoodsController {
 
     @Autowired
@@ -35,11 +40,9 @@ public class UsedGoodsController {
     UsedGoodsRepository usedGoodsRepository;
 
     @PostMapping
-    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> create(UsedGoodsRequest dto) {
-        // 제네릭, 컬렉션
+    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> createUsedGoods(UsedGoodsRequest dto) {
         UsedGoodsResponse savedUsedGoods = usedGoodsService.create(dto);
         ResponseFormat<UsedGoodsResponse> responseFormat = new ResponseFormat<>(ResponseStatus.POST_USEDGOODS_SUCCESS, savedUsedGoods);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(responseFormat);
     }
 }

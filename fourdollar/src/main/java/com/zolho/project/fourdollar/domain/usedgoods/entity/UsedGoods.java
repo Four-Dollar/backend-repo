@@ -19,18 +19,19 @@ import java.util.Date;
  */
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Data
+@NoArgsConstructor
+@Table(name="usedgoods")
+@ToString
 public class UsedGoods {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     // TODO : 추후에 수정 예정
     @Column(nullable = false)
-    private int userId;
+    private Integer userId;
 
     @Column(nullable = false)
     private String title;
@@ -38,17 +39,18 @@ public class UsedGoods {
     @Column(nullable = false)
     private String description;
 
-    @Embedded
-    private BaseTime baseTime;
+//    @Embedded
+//    private BaseTime baseTime;
 
     @Column(nullable = false)
     private Boolean isDeleted;
 
     @Builder
-    public UsedGoods(int userId, String title, String description) {
+    public UsedGoods(Integer userId, String title, String description, boolean isDeleted) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.isDeleted = isDeleted;
     }
 
 }
