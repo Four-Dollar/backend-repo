@@ -28,6 +28,7 @@ public class UsedGoodsMapper {
                 .userId(dto.getUserId())
                 .title(dto.getTitle())
                 .description(dto.getDescription())
+                .isDeleted(false)
                 .build();
     }
 
@@ -36,7 +37,7 @@ public class UsedGoodsMapper {
                 .userId(entity.getUserId())
                 .title(entity.getTitle())
                 .description(entity.getDescription())
+                .isDeleted(false)
                 .build();
     }
-
 }
