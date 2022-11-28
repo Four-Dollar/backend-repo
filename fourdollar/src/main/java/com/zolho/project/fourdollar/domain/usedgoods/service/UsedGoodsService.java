@@ -6,6 +6,7 @@ import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
 import com.zolho.project.fourdollar.domain.usedgoods.mapper.UsedGoodsMapper;
 import com.zolho.project.fourdollar.domain.usedgoods.repository.UsedGoodsRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UsedGoodsService {
 
     @Autowired
@@ -35,8 +37,8 @@ public class UsedGoodsService {
     // 게시물 등록
     @Transactional
     public UsedGoodsResponse create(UsedGoodsRequest requestDto) {
-        UsedGoods usedGoods = usedGoodsRepository.save(usedGoodsMapper.toEntity(requestDto));
-
+        UsedGoods saveUsedGoods = usedGoodsMapper.toEntity(requestDto);
+        UsedGoods usedGoods = usedGoodsRepository.save(saveUsedGoods);
         return usedGoodsMapper.toDto(usedGoods);
     }
 
