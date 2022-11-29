@@ -2,9 +2,12 @@ package com.zolho.project.fourdollar.domain.usedgoods.entity;
 
 import com.zolho.project.fourdollar.global.entity.BaseTime;
 import lombok.*;
+import net.bytebuddy.implementation.bind.annotation.Default;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -21,7 +24,6 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="usedgoods")
 @ToString
 public class UsedGoods {
 
@@ -39,18 +41,27 @@ public class UsedGoods {
     @Column(nullable = false)
     private String description;
 
-//    @Embedded
-//    private BaseTime baseTime;
-
     @Column(nullable = false)
+    private Integer bid;
+
+    @Embedded
+    private BaseTime baseTime;
+
+    @Column
     private Boolean isDeleted;
 
+    @Column
+    private Date deadline;
+
     @Builder
-    public UsedGoods(Integer userId, String title, String description, boolean isDeleted) {
+    public UsedGoods(Integer userId, String title, String description, Integer bid, Date deadline) {
         this.userId = userId;
         this.title = title;
         this.description = description;
-        this.isDeleted = isDeleted;
+        this.bid = bid;
+        this.deadline = deadline;
     }
 
 }
+
+

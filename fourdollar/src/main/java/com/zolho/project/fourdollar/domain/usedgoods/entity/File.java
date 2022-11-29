@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.domain.file.entity;
+package com.zolho.project.fourdollar.domain.usedgoods.entity;
 
 import com.zolho.project.fourdollar.global.entity.BaseTime;
 import lombok.*;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 /**
  * @author : 김현진
  * @version : 1.0.0
- * @package : com.zolho.project.fourdollar.domain.file.entity
+ * @package : com.zolho.project.fourdollar.domain.usedgoods.entity
  * @name : File
  * @create-date: 2022.11.26
  * @update-date :
@@ -25,13 +25,10 @@ public class File {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // 외래키로 변경
-    @Column(nullable = false)
-    @Setter
-    private Long userGoodsId;
+//    @Column(nullable = false)
+//    private Long userGoodsId;
 
     @Column(nullable = false)
-    @Setter
     private String fileUrl;
 
     @Embedded
@@ -41,12 +38,19 @@ public class File {
     @Builder.Default
     private boolean isDeleted = Boolean.FALSE;
 
+    // UsedGoods 외래키 연결
+    @ManyToOne(cascade = CascadeType.ALL)
+    // @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userGoods_id")
+    private UsedGoods usedGoods;
+
     @Builder
-    public File(String fileUrl, Long userGoodsId){
+    public File(String fileUrl, UsedGoods usedGoods){
         this.fileUrl = fileUrl;
-        this.userGoodsId = userGoodsId;
+        this.usedGoods = usedGoods;
     }
 
     public File() {
+
     }
 }

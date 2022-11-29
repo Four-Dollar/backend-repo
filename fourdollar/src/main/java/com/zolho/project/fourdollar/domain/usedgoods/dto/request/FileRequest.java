@@ -1,4 +1,4 @@
-package com.zolho.project.fourdollar.domain.file.dto.request;
+package com.zolho.project.fourdollar.domain.usedgoods.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * @author : 김현진
  * @version : 1.0.0
- * @package : com.zolho.project.fourdollar.domain.file.dto.request
+ * @package : com.zolho.project.fourdollar.domain.usedgoods.dto.request
  * @name : FileRequest
  * @create-date: 2022.11.26
  * @update-date :
@@ -22,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 @AllArgsConstructor
 @Setter
 public class FileRequest {
-    private Long userGoodsId;
     private String fileUrl;
     private MultipartFile file;
 }

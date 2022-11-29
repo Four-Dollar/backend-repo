@@ -1,6 +1,6 @@
-package com.zolho.project.fourdollar.domain.file.repository;
+package com.zolho.project.fourdollar.domain.usedgoods.repository;
 
-import com.zolho.project.fourdollar.domain.file.entity.File;
+import com.zolho.project.fourdollar.domain.usedgoods.entity.File;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,5 +25,6 @@ public interface FileRepository extends JpaRepository<File, Long> {
     @Modifying(clearAutomatically = true)
     @Query(value = "UPDATE file SET is_deleted = true WHERE id = CAST(:id as INTEGER)", nativeQuery = true)
     void deleteById(@Param("id") int id);
+
 }
 
