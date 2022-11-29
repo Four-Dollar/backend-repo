@@ -2,10 +2,12 @@ package com.zolho.project.fourdollar.domain.usedgoods.mapper;
 
 import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
+import com.zolho.project.fourdollar.domain.usedgoods.entity.File;
 import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
-import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoodsBid;
 import com.zolho.project.fourdollar.global.entity.Mapper;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
 
 
 /**
@@ -28,16 +30,19 @@ public class UsedGoodsMapper {
                 .userId(dto.getUserId())
                 .title(dto.getTitle())
                 .description(dto.getDescription())
-                .isDeleted(false)
+                .bid(dto.getBid())
+                .deadline(dto.getDeadline())
                 .build();
     }
 
-    public UsedGoodsResponse toDto(UsedGoods entity) {
+    public UsedGoodsResponse toDto(UsedGoods UsedGoodsEntity, List<String> urlsList) {
         return UsedGoodsResponse.builder()
-                .userId(entity.getUserId())
-                .title(entity.getTitle())
-                .description(entity.getDescription())
-                .isDeleted(false)
+                .userId(UsedGoodsEntity.getUserId())
+                .title(UsedGoodsEntity.getTitle())
+                .description(UsedGoodsEntity.getDescription())
+                .pictures_id(urlsList.toString())
+                .bid(UsedGoodsEntity.getBid())
+                .deadline(UsedGoodsEntity.getDeadline())
                 .build();
     }
 }

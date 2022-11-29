@@ -1,8 +1,8 @@
-package com.zolho.project.fourdollar.domain.file.mapper;
+package com.zolho.project.fourdollar.domain.usedgoods.mapper;
 
-import com.zolho.project.fourdollar.domain.file.dto.request.FileRequest;
-import com.zolho.project.fourdollar.domain.file.dto.response.FileResponse;
-import com.zolho.project.fourdollar.domain.file.entity.File;
+import com.zolho.project.fourdollar.domain.usedgoods.dto.request.FileRequest;
+import com.zolho.project.fourdollar.domain.usedgoods.dto.response.FileResponse;
+import com.zolho.project.fourdollar.domain.usedgoods.entity.File;
 import com.zolho.project.fourdollar.global.entity.Mapper;
 import lombok.RequiredArgsConstructor;
 
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class FileMapper {
     public File toEntity(FileRequest dto){
         return File.builder()
-                .userGoodsId(dto.getUserGoodsId())
+                //.userGoodsId(dto.getUserGoodsId())
                 .fileUrl(dto.getFileUrl())
                 .build();
     }
@@ -30,7 +30,6 @@ public class FileMapper {
     public FileResponse toDto(File entity){
         return FileResponse.builder()
                 .id(entity.getId())
-                .userGoodsId(entity.getUserGoodsId())
                 .fileUrl(entity.getFileUrl())
                 .build();
     }

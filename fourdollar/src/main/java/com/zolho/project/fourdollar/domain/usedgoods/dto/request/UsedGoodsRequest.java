@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author : 조현민
@@ -22,13 +23,10 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 public class UsedGoodsRequest {
-    @JsonProperty
     private int userId;
-    @JsonProperty
     private String title;
-    @JsonProperty
     private String description;
-//    private String[] pictures;
-//    private int bid;
- //   private Date deadline;
+    private List pictures_id;
+    private int bid;
+    private Date deadline;
 }
