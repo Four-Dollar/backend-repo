@@ -51,10 +51,10 @@ public class UsedGoods {
     private Boolean isDeleted;
 
     @Column
-    private Date deadline;
+    private int deadline;
 
     @Builder
-    public UsedGoods(Integer userId, String title, String description, Integer bid, Date deadline) {
+    public UsedGoods(Integer userId, String title, String description, Integer bid, int deadline) {
         this.userId = userId;
         this.title = title;
         this.description = description;

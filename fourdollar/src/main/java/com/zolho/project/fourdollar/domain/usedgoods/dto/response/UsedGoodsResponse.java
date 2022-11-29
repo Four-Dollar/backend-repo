@@ -30,6 +30,8 @@ public class UsedGoodsResponse {
     private String pictures_id; //타입이 맞나?
     private int bid;
     private boolean isDeleted;
-     private Date deadline;
+    private int deadline;
+
+
 
 }

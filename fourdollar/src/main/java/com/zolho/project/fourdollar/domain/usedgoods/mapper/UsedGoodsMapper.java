@@ -2,13 +2,11 @@ package com.zolho.project.fourdollar.domain.usedgoods.mapper;
 
 import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
-import com.zolho.project.fourdollar.domain.usedgoods.entity.File;
 import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
 import com.zolho.project.fourdollar.global.entity.Mapper;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-
 
 /**
  * @author : 조현민
@@ -24,7 +22,6 @@ import java.util.List;
 @Mapper
 @RequiredArgsConstructor
 public class UsedGoodsMapper {
-
     public UsedGoods toEntity(UsedGoodsRequest dto) {
         return UsedGoods.builder()
                 .userId(dto.getUserId())

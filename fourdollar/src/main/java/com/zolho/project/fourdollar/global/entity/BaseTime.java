@@ -6,8 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EntityListeners;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -31,6 +30,17 @@ public class BaseTime {
 
     @LastModifiedDate
     private LocalDateTime updateAt;
+
+    @PrePersist
+    public void onPrePersist(){
+        this.createAt = LocalDateTime.now();
+        this.updateAt = this.updateAt;
+    }
+
+    @PreUpdate
+    public void onPreUpdate() {
+        this.updateAt = LocalDateTime.now();
+    }
 
     //private LocalDateTime deleteAt;
 
