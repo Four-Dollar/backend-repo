@@ -28,5 +28,5 @@ public class UsedGoodsRequest {
     private String description;
     private List pictures_id;
     private int bid;
-    private Date deadline;
+    private int deadline;
 }
