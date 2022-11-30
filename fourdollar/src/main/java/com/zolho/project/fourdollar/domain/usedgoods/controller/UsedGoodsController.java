@@ -32,6 +32,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/v1/used-goods")
 @Slf4j
+@CrossOrigin
 public class UsedGoodsController {
     @Autowired
     S3Service s3Service;
