@@ -23,10 +23,10 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class UsedGoodsRequest {
-    private int userId;
+    private int user_id;
     private String title;
     private String description;
-    private List pictures_id;
+    private List pictures;
     private int bid;
     private int deadline;
 }
