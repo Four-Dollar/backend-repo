@@ -12,8 +12,8 @@ import java.util.List;
  * @package : com.zolho.project.fourdollar.domain.usedgoods.dto.request
  * @name : UsedGoodsRequest
  * @create-date: 2022.11.23
- * @update-date : 2022.11.26
- * @update-author : 조현민
+ * @update-date : 2022.11.30
+ * @update-author : 조현민, 김현진
  * @update-description :
  */
 

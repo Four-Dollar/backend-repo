@@ -6,6 +6,7 @@ import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
 import com.zolho.project.fourdollar.global.entity.Mapper;
 import lombok.RequiredArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -14,8 +15,8 @@ import java.util.List;
  * @package : com.zolho.project.fourdollar.domain.usedgoods.mapper
  * @name : UsedGoodsMapper
  * @create-date: 2022.11.23
- * @update-date : 2022.11.26
- * @update-author : 조현민
+ * @update-date : 2022.11.30
+ * @update-author : 조현민, 김현진
  * @update-description :
  */
 
@@ -34,12 +35,13 @@ public class UsedGoodsMapper {
 
     public UsedGoodsResponse toDto(UsedGoods UsedGoodsEntity, List<String> urlsList) {
         return UsedGoodsResponse.builder()
-                .userId(UsedGoodsEntity.getUserId())
+                .user_id(UsedGoodsEntity.getUserId())
                 .title(UsedGoodsEntity.getTitle())
                 .description(UsedGoodsEntity.getDescription())
                 .pictures_id(urlsList.toString())
                 .bid(UsedGoodsEntity.getBid())
-                .deadline(UsedGoodsEntity.getDeadline())
+                .deadline(LocalDateTime.now().plusDays(UsedGoodsEntity.getDeadline()))
+                .created_at(LocalDateTime.now())
                 .build();
     }
 }

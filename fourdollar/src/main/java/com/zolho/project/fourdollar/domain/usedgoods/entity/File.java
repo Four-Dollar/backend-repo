@@ -20,19 +20,13 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-public class File {
+public class File extends BaseTime{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(nullable = false)
-//    private Long userGoodsId;
-
     @Column(nullable = false)
     private String fileUrl;
-
-    @Embedded
-    private BaseTime baseTime;
 
     @Column(nullable = false)
     @Builder.Default
@@ -40,7 +34,6 @@ public class File {
 
     // UsedGoods 외래키 연결
     @ManyToOne(cascade = CascadeType.ALL)
-    // @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userGoods_id")
     private UsedGoods usedGoods;
 

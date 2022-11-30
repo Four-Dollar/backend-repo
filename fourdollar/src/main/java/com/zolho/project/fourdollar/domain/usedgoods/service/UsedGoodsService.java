@@ -4,13 +4,11 @@ import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsReques
 import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
 import com.zolho.project.fourdollar.domain.usedgoods.entity.File;
 import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
-import com.zolho.project.fourdollar.domain.usedgoods.mapper.FileMapper;
 import com.zolho.project.fourdollar.domain.usedgoods.mapper.UsedGoodsMapper;
 import com.zolho.project.fourdollar.domain.usedgoods.repository.FileRepository;
 import com.zolho.project.fourdollar.domain.usedgoods.repository.UsedGoodsRepository;
 import com.zolho.project.fourdollar.global.file.service.S3Service;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,9 +45,6 @@ public class UsedGoodsService {
     @Autowired
     FileRepository fileRepository;
 
-    @Autowired
-    FileMapper fileMapper;
-
     // 게시글 작성
     @Transactional
     public UsedGoodsResponse create(UsedGoodsRequest usedRequestDto, List<String> urls, UsedGoods usedGoods) {
@@ -67,7 +62,7 @@ public class UsedGoodsService {
     }
 
     private void postBlankCheck(List<String> urls) {
-        if (urls == null || urls.isEmpty()) { //.isEmpty()도 되는지 확인해보기
+        if (urls == null || urls.isEmpty()) { //.isEmpty()도 되는지 확인
             log.warn("없음");
         }
     }
