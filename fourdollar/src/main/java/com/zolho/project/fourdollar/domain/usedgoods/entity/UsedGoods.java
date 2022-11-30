@@ -2,13 +2,7 @@ package com.zolho.project.fourdollar.domain.usedgoods.entity;
 
 import com.zolho.project.fourdollar.global.entity.BaseTime;
 import lombok.*;
-import net.bytebuddy.implementation.bind.annotation.Default;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 
 /**
  * @author : 조현민
@@ -16,16 +10,16 @@ import java.util.List;
  * @package : com.zolho.project.fourdollar.domain.usedgoods.entity
  * @name : UsedGoods
  * @create-date: 2022.11.23
- * @update-date : 2022.11.26
- * @update-author : 조현민
- * @update-description :
+ * @update-date : 2022.11.30
+ * @update-author : 조현민, 김현진
+ * @update-description :  file, UsedGoods 합침
  */
 
 @Entity
 @Data
 @NoArgsConstructor
 @ToString
-public class UsedGoods {
+public class UsedGoods extends BaseTime{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,9 +38,6 @@ public class UsedGoods {
     @Column(nullable = false)
     private Integer bid;
 
-    @Embedded
-    private BaseTime baseTime;
-
     @Column
     private Boolean isDeleted;
 
@@ -61,7 +52,6 @@ public class UsedGoods {
         this.bid = bid;
         this.deadline = deadline;
     }
-
 }
 
 

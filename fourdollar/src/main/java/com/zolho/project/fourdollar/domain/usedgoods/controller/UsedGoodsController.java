@@ -1,8 +1,6 @@
 package com.zolho.project.fourdollar.domain.usedgoods.controller;
 
 import com.zolho.project.fourdollar.domain.usedgoods.entity.UsedGoods;
-import com.zolho.project.fourdollar.domain.usedgoods.repository.FileRepository;
-import com.zolho.project.fourdollar.domain.usedgoods.repository.UsedGoodsRepository;
 import com.zolho.project.fourdollar.domain.usedgoods.service.UsedGoodsService;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.request.UsedGoodsRequest;
 import com.zolho.project.fourdollar.domain.usedgoods.dto.response.UsedGoodsResponse;
@@ -13,14 +11,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
-
 
 /**
  * @author : 조현민
@@ -30,7 +25,7 @@ import java.util.List;
  * @create-date: 2022.11.23
  * @update-date : 2022.11.30
  * @update-author : 조현민, 김현진
- * @update-description :
+ * @update-description : file, UsedGoods 합침
  */
 
 @RestController
@@ -38,14 +33,13 @@ import java.util.List;
 @RequestMapping("api/v1/used-goods")
 @Slf4j
 public class UsedGoodsController {
-
     @Autowired
     S3Service s3Service;
     @Autowired
     UsedGoodsService usedGoodsService;
 
     @PostMapping
-    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> createUsedGoods(UsedGoodsRequest usedDto,@RequestPart("file") List<MultipartFile> multipartFiles, UsedGoods usedGoods){
+    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> createUsedGoods(UsedGoodsRequest usedDto, @RequestPart("file") List<MultipartFile> multipartFiles, UsedGoods usedGoods){
         if (multipartFiles == null){
             log.warn("없음");
         }

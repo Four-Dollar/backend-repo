@@ -1,7 +1,9 @@
 package com.zolho.project.fourdollar.domain.usedgoods.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -11,9 +13,9 @@ import java.util.List;
  * @package : com.zolho.project.fourdollar.domain.usedgoods.dto.respond
  * @name : UsedGoodsResponse
  * @create-date: 2022.11.23
- * @update-date : 2022.11.26
- * @update-author : 조현민
- * @update-description :
+ * @update-date : 2022.11.30
+ * @update-author : 조현민, 김현진
+ * @update-description : file, UsedGoods 합침
  */
 
 
@@ -23,15 +25,12 @@ import java.util.List;
 @ToString
 @Getter
 public class UsedGoodsResponse {
-
-    private int userId;
+    private int user_id;
     private String title;
     private String description;
-    private String pictures_id; //타입이 맞나?
+    private String pictures_id;
     private int bid;
-    private boolean isDeleted;
-    private int deadline;
-
-
-
+    private LocalDateTime deadline;
+    private LocalDateTime created_at;
+    //private boolean isDeleted;
 }

@@ -1,10 +1,11 @@
 package com.zolho.project.fourdollar.global.entity;
 
 import lombok.Getter;
-import lombok.ToString;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -21,13 +22,16 @@ import java.time.LocalDateTime;
  */
 
 @Getter
-@Embeddable
+//@Embeddable
+@MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@ToString
-public class BaseTime {
+public abstract class BaseTime {
+
+    @Column
     @CreatedDate
     private LocalDateTime createAt;
 
+    @Column
     @LastModifiedDate
     private LocalDateTime updateAt;
 
