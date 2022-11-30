@@ -25,7 +25,7 @@ import java.util.List;
 public class UsedGoodsMapper {
     public UsedGoods toEntity(UsedGoodsRequest dto) {
         return UsedGoods.builder()
-                .userId(dto.getUserId())
+                .user_id(dto.getUser_id())
                 .title(dto.getTitle())
                 .description(dto.getDescription())
                 .bid(dto.getBid())
@@ -35,7 +35,7 @@ public class UsedGoodsMapper {
 
     public UsedGoodsResponse toDto(UsedGoods UsedGoodsEntity, List<String> urlsList) {
         return UsedGoodsResponse.builder()
-                .user_id(UsedGoodsEntity.getUserId())
+                .user_id(UsedGoodsEntity.getUser_id())
                 .title(UsedGoodsEntity.getTitle())
                 .description(UsedGoodsEntity.getDescription())
                 .pictures_id(urlsList.toString())

@@ -32,7 +32,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/v1/used-goods")
 @Slf4j
-@CrossOrigin
+@CrossOrigin(originPatterns = "http://localhost:3000")
 public class UsedGoodsController {
     @Autowired
     S3Service s3Service;
@@ -40,7 +40,7 @@ public class UsedGoodsController {
     UsedGoodsService usedGoodsService;
 
     @PostMapping
-    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> createUsedGoods(UsedGoodsRequest usedDto, @RequestPart("file") List<MultipartFile> multipartFiles, UsedGoods usedGoods){
+    public ResponseEntity<ResponseFormat<UsedGoodsResponse>> createUsedGoods(UsedGoodsRequest usedDto, @RequestPart("pictures") List<MultipartFile> multipartFiles, UsedGoods usedGoods){
         if (multipartFiles == null){
             log.warn("없음");
         }

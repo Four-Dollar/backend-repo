@@ -27,7 +27,7 @@ public class UsedGoods extends BaseTime{
 
     // TODO : 추후에 수정 예정
     @Column(nullable = false)
-    private Integer userId;
+    private Integer user_id;
 
     @Column(nullable = false)
     private String title;
@@ -45,8 +45,8 @@ public class UsedGoods extends BaseTime{
     private int deadline;
 
     @Builder
-    public UsedGoods(Integer userId, String title, String description, Integer bid, int deadline) {
-        this.userId = userId;
+    public UsedGoods(Integer user_id, String title, String description, Integer bid, int deadline) {
+        this.user_id = user_id;
         this.title = title;
         this.description = description;
         this.bid = bid;
